@@ -1,10 +1,10 @@
 {
   "name": "tcc",
   "version": "1.0.0",
-  "description": "refatoração to meu tcc",
-  "main": "index.js",
+  "description": "refatoração do meu tcc",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ."
   },
   "repository": {
     "type": "git",
@@ -17,10 +17,13 @@
   },
   "homepage": "https://github.com/akaLuisinho/tcc-refactor#readme",
   "dependencies": {
-    "eslint": "^7.24.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
-    "mysql3": "^0.5.14",
+    "mysql3": "^0.5.14"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0",
     "nodemon": "^2.0.7"
   }
 }

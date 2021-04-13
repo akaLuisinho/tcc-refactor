@@ -2,7 +2,7 @@
     margin:0px;
 }
 body {
-background-image:url("imagem/fundoprojeto.jpg");
+background-image:url("../images/fundoprojeto.jpg");
 }
 #topo {
     width:100%; 
