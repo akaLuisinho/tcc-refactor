@@ -3,9 +3,9 @@ module.exports = {
         return res.render('index')
     },
     aboutShow (req, res) {
-        return res.render('sobre')
+        return res.render('about')
     },
     dentistShow (req, res) {
-        return res.render('dentistas')
+        return res.render('dentists')
     }
 }
