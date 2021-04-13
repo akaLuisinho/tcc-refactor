@@ -8,11 +8,12 @@ const initDb = {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name CHAR(200) NOT NULL,
             address CHAR(200),
-            phone INT(20) NOT NULL,
+            phone CHAR(30) NOT NULL,
             gender CHAR(1),
-            birth_date INT(30),
-            day INT(20) NOT NULL,
-            time INT(20) NOT NULL,
+            birth_date CHAR(30),
+            dentist CHAR(30) NOT NULL,
+            day CHAR(20) NOT NULL,
+            time CHAR(20) NOT NULL,
             email CHAR(200) NOT NULL
         )`)
         await db.close()
