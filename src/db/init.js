@@ -12,7 +12,7 @@ const initDb = {
             gender CHAR(1),
             birth_date INT(30),
             day INT(20) NOT NULL,
-            time INT(20) NOT NULL
+            time INT(20) NOT NULL,
             email CHAR(200) NOT NULL
         )`)
         await db.close()

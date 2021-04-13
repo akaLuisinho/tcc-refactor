@@ -4,7 +4,8 @@
   "description": "refatoração do meu tcc",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon ."
+    "dev": "nodemon .",
+    "db": "node src/db/init.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,9 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
-    "mysql3": "^0.5.14"
+    "mysql3": "^0.5.14",
+    "sqlite": "^4.0.21",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "eslint": "^7.24.0",
