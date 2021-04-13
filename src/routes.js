@@ -13,4 +13,8 @@ routes.get('/appointment', Appointment.makeAppointmentShow)
 routes.post('/appointment', Appointment.makeAppointment)
 
 routes.get('/login', Login.authShow)
+routes.post('/login', Login.auth)
+
+routes.get('/showAppointment', Appointment.showAppointment)
+
 module.exports = routes

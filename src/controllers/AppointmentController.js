@@ -33,7 +33,12 @@ module.exports = {
 
         res.redirect('appointment')
     },
-    showAppointment(req, res) {
+    async showAppointment(req, res) {
 
+        const db = await Database()
+        const data = await db.all(`SELECT * FROM appointments`)
+        db.close()
+        console.log(data);
+        return res.render('showAppointment', { data })
     }
 }

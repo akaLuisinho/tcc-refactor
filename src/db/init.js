@@ -16,6 +16,18 @@ const initDb = {
             time CHAR(20) NOT NULL,
             email CHAR(200) NOT NULL
         )`)
+        await db.exec(`CREATE TABLE login(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username CHAR(40),
+            password CHAR(40)
+        )`)
+        await db.exec(`INSERT INTO login(
+            username,
+            password
+        ) VALUES (
+            "luisfelipe",
+            "luisfelipe@2021"
+        )`)
         await db.close()
     }
 }

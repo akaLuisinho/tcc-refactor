@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Painel do Funcionário - Uniodonto Campinas</title>
+    </head>
+
+    <body>
+        <% data.forEach((client) => { %> 
+        <%= client.name %> 
+        <%= client.address %> 
+        <%= client.phone %> 
+        <%= client.gender %> 
+        <%= client.birth_date %> 
+        <%= client.dentist %> 
+        <%= client.day %> 
+        <%= client.time %> 
+        <%= client.email %>
+        <% }) %> 
+    </body>
+</html>
