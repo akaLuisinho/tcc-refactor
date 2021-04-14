@@ -15,6 +15,9 @@ routes.post('/appointment', Appointment.makeAppointment)
 routes.get('/login', Login.authShow)
 routes.post('/login', Login.auth)
 
-routes.get('/showAppointment', Appointment.showAppointment)
+routes.get('/showAppointments', Appointment.showAppointments)
+
+routes.get('/editAppointment/:id', Appointment.editAppointmentShow)
+routes.post('/editAppointment/:id', Appointment.editAppointment)
 
 module.exports = routes

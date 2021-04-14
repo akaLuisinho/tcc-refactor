@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Uniodonto Campinas</title>
+        <link rel="stylesheet" type="text/css" href="/styles/appointment.css">
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="legend">
+                <div class="data">Nome Completo</div>
+                <div class="data">Endereço</div>
+                <div class="data">Telefone</div>
+                <div class="data">Sexo</div>
+                <div class="data">Nascimento</div> 
+                <div class="data">Dentista</div>
+                <div class="data">Dia</div>
+                <div class="data">Horario</div>
+                <div class="data">E-mail</div>
+            </div>
+        </div>
+        <% data.forEach((client) => { %> 
+            <div id="container">
+                <div id="appointment">
+                    <div class="data"> <%= client.name %> </div>
+                    <div class="data"> <%= client.address %> </div>
+                    <div class="data"> <%= client.phone %> </div>
+                    <div class="data"> <%= client.gender %> </div>
+                    <div class="data"> <%= client.birth_date %> </div> 
+                    <div class="data"> <%= client.dentist %> </div>
+                    <div class="data"> <%= client.day %> </div>
+                    <div class="data"> <%= client.time %> </div>
+                    <div class="data"> <%= client.email %> </div>
+                </div>
+                <div id="action-box">
+                    <form method="get" action="/editAppointment/<%= client.id %>"><button class="btn">Alterar</button></form>
+                    <form method="post" action="/deleteAppointment"><button class="btn">Deletar</button></form>
+                </div>
+                <form id="edit"></form>
+            </div>
+        <% }) %> 
+    </body>
+</html>

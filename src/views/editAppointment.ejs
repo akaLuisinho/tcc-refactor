@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Consulta - Uniodonto Campinas</title>
+		 <meta charset="UTF_8">
+		<link rel="stylesheet" type="text/css" href="/styles/projeto.css">	
+	</head>
+
+	<body>
+	
+		<div id="top">
+			<br><img src="/images/logo.png">
+		</div>
+		
+		<div id="menu">
+			<ul>
+				<input type= "checkbox" id="chec">
+				<label for="chec"> 
+					<img src="/images/menu.png">
+				</label> 
+				<nav>
+					<ul>
+						<li><a href="/">Início</a></li>
+						<li><a href="/dentists">Nossos Dentistas</a></li>
+						<li><a href="/appointment">Marque sua consulta</a></li>
+						<li><a href="/login">Painel do Funcionário</a></li>
+						<li><a href="/about"><%= data.name %></a></li>
+					</ul>
+				</nav>
+			</ul>
+		</div>
+		<div id="content">
+        	<p><br><p><br><p><br>
+                <%= data.name %>
+            <form action="/editAppointment/<%= data.id %> " method="post"><center>
+                
+			Nome completo:<br><input type="text" name="name" size="20" value= "<%= data.name %>"> <p><br>
+			Endereço:<br><input type="text" name="address" size="20" required><p><br>
+			Telefone:<br><input type="text" name="phone" size="16" maxlength="16" placeholder="DDD-99999-9999" required><p><br>
+			Sexo:<br><input type="radio" name="gender" value="m" required>Masculino
+						<input type="radio" name="gender" value="f" required>Feminino<p><br>
+			Data de Nascimento: <br><input type="text" name="birth_date" size="16" maxlength="16" placeholder="ANO/MES/DIA" required><p><br>
+			Dentista:<br><select name="dentist" required>
+							<option value="claudia">  Claudia  </option>
+							<option value="elizabeth">  Elizabeth  </option>
+							<option value="laura">  Laura </option>
+							<option value="paulo">  Paulo  </option>
+						</select><br>
+			Dia:<br><input type="text" name="day" size="16"placeholder="DIA/MES" required><br>
+			Horário:<br><input type="text" name="time" size="18" placeholder="00:00" required><p><br>
+			Seu e-mail:<br><input type="text"name="email" size="20" maxlength="100" required><p><br>
+			<input type="submit" value="Cadastrar" class="btn"></center>
+            </form>
+		</div>
+
+		<div id="footer">
+		<img src="/images/rodape.png" width="100%" height="140">
+		</div>
+	</body>
+</html>

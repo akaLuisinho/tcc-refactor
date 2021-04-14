@@ -13,7 +13,7 @@ module.exports = {
         await db.close()
 
         if(userData.username == username && userData.password == password){
-           return res.redirect('showAppointment')
+           return res.redirect('showAppointments')
         } else{
             return res.redirect('login')
         }
