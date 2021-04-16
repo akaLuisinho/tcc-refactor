@@ -44,7 +44,7 @@ module.exports = {
         const id = req.params.id
 
         db = await Database()
-        const editingAppointment = await db.all(`SELECT * FROM appointments WHERE id = ${id}`)
+        const editingAppointment = await db.get(`SELECT * FROM appointments WHERE id = ${id}`)
         await db.close()
         console.log(editingAppointment);
         return res.render('editAppointment', { data: editingAppointment })

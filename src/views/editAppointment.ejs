@@ -30,24 +30,23 @@
 		</div>
 		<div id="content">
         	<p><br><p><br><p><br>
-                <%= data.name %>
             <form action="/editAppointment/<%= data.id %> " method="post"><center>
                 
 			Nome completo:<br><input type="text" name="name" size="20" value= "<%= data.name %>"> <p><br>
-			Endereço:<br><input type="text" name="address" size="20" required><p><br>
-			Telefone:<br><input type="text" name="phone" size="16" maxlength="16" placeholder="DDD-99999-9999" required><p><br>
-			Sexo:<br><input type="radio" name="gender" value="m" required>Masculino
-						<input type="radio" name="gender" value="f" required>Feminino<p><br>
-			Data de Nascimento: <br><input type="text" name="birth_date" size="16" maxlength="16" placeholder="ANO/MES/DIA" required><p><br>
-			Dentista:<br><select name="dentist" required>
+			Endereço:<br><input type="text" name="address" size="20" required value= "<%= data.address %>"> <p><br>
+			Telefone:<br><input type="text" name="phone" size="16" maxlength="16" placeholder="DDD-99999-9999" required value= "<%= data.phone %>"><p><br>
+			Sexo:<br><input type="radio" name="gender" value="m" required value= "<%= data.gender %>">Masculino
+						<input type="radio" name="gender" value="f" required value= "<%= data.gender %>">Feminino<p><br>
+			Data de Nascimento: <br><input type="text" name="birth_date" size="16" maxlength="16" placeholder="ANO/MES/DIA" required value= "<%= data.birth_date %>"><p><br>
+			Dentista:<br><select name="dentist" required value= "<%= data.dentist %>">
 							<option value="claudia">  Claudia  </option>
 							<option value="elizabeth">  Elizabeth  </option>
 							<option value="laura">  Laura </option>
 							<option value="paulo">  Paulo  </option>
 						</select><br>
-			Dia:<br><input type="text" name="day" size="16"placeholder="DIA/MES" required><br>
-			Horário:<br><input type="text" name="time" size="18" placeholder="00:00" required><p><br>
-			Seu e-mail:<br><input type="text"name="email" size="20" maxlength="100" required><p><br>
+			Dia:<br><input type="text" name="day" size="16"placeholder="DIA/MES" required value= "<%= data.day %>"><br>
+			Horário:<br><input type="text" name="time" size="18" placeholder="00:00" required value= "<%= data.time %>"><p><br>
+			Seu e-mail:<br><input type="text"name="email" size="20" maxlength="100" required value= "<%= data.email %>"><p><br>
 			<input type="submit" value="Cadastrar" class="btn"></center>
             </form>
 		</div>
