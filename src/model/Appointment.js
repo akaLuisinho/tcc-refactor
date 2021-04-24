@@ -57,7 +57,8 @@ module.exports = {
     async delete(id) {
         db = await Database()
 
-        db.run(`DELETE FROM appointments WHERE id = ${id}`)
-        db.close()
+        await db.run(`DELETE FROM appointments WHERE id = ${id}`)
+        
+        await db.close()
     }
 }

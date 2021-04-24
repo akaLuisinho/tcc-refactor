@@ -33,7 +33,7 @@
                 </div>
                 <div id="action-box">
                     <form method="get" action="/editAppointment/<%= client.id %>"><button class="btn">Alterar</button></form>
-                    <form method="post" action="/deleteAppointment"><button class="btn">Deletar</button></form>
+                    <form method="post" action="/deleteAppointment/<%= client.id %>"><button class="btn">Deletar</button></form>
                 </div>
                 <form id="edit"></form>
             </div>

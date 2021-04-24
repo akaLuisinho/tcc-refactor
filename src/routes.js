@@ -19,5 +19,6 @@ routes.get('/showAppointments', Appointment.showAppointments)
 
 routes.get('/editAppointment/:id', Appointment.editAppointmentShow)
 routes.post('/editAppointment/:id', Appointment.editAppointment)
+routes.post('/deleteAppointment/:id', Appointment.deleteAppointment)
 
 module.exports = routes
