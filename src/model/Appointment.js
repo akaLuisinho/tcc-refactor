@@ -1,12 +1,11 @@
-const { create } = require('eslint/lib/rules/*')
 const Database = require('../db/config')
 
 module.exports = {
     async get() {
-        db = await Database()
-        
-        const data = db.get(`SELECT * FROM appointments`)
-        
+        const db = await Database()
+
+        const data = await db.all(`SELECT * FROM appointments`)
+
         db.close()
 
         return data
@@ -14,55 +13,46 @@ module.exports = {
     async create(data) {
         db = await Database()
 
-        db.run(`INSERT INTO TABLE appointments(
+        await db.run(`INSERT INTO appointments(
             name,
             address,
             phone,
-            gender,
+            gender, 
             birth_date,
             dentist,
             day,
-            time,
+            time, 
             email
         ) VALUES(
-            ${data.name},
-            ${data.address},
-            ${data.phone},
-            ${data.gender},
-            ${data.birth_date},
-            ${data.dentist},
-            ${data.day},
-            ${data.time},
-            ${data.email}
-        )`)
-        db.close()
+            "${data.name}",
+            "${data.address}",
+            "${data.phone}",
+            "${data.gender}",
+            "${data.birth_date}",
+            "${data.dentist}",
+            "${data.day}",
+            "${data.time}",
+            "${data.email}"
+        )` )
+
+        await db.close()
     },
     async update(newData, id) {
         db = await Database()
 
-        db.run(`UPDATE appointments set(
-            name,
-            address,
-            phone,
-            gender,
-            birth_date,
-            dentist,
-            day,
-            time,
-            email
-        ) VALUES(
-            ${newData.name},
-            ${newData.address},
-            ${newData.phone},
-            ${newData.gender},
-            ${newData.birth_date},
-            ${newData.dentist},
-            ${newData.day},
-            ${newData.time},
-            ${newData.email}
-        ) WHERE id = ${id}`)
-        db.close()
+        await db.run(`UPDATE appointments SET
+            name = "${newData.name}",
+            address = "${newData.address}",
+            phone = "${newData.phone}",
+            gender = "${newData.gender}",
+            birth_date = "${newData.birth_date}",
+            dentist = "${newData.dentist}",
+            day = "${newData.day}",
+            time = "${newData.time}",
+            email = "${newData.email}"
+        WHERE id = ${id}` )
 
+        await db.close()
     },
     async delete(id) {
         db = await Database()
