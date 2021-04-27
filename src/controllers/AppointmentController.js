@@ -1,4 +1,5 @@
 const Appointment = require('../model/Appointment')
+const Auth = require('./AuthController')
 
 module.exports = {
     makeAppointmentShow(req, res) {
@@ -13,9 +14,12 @@ module.exports = {
     },
 
     async showAppointments(req, res) {
-        const data = await Appointment.get()
-
-        return res.render('showAppointments', { data })
+        if(Auth.getValidate()){
+            const data = await Appointment.get()
+            return res.render('showAppointments', { data })
+        } else {
+            res.redirect('login')
+        }
     },
 
     async editAppointmentShow(req, res) {

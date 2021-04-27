@@ -1,21 +1,27 @@
-const Database = require('../db/config')
+const Auth = require('../model/Auth')
 
-module.exports = {
-    authShow(req, res) {
-        res.render('login')
-    },
-    async auth(req, res){
-        const username = req.body.username
-        const password = req.body.password
-
-        db = await Database()
-        const userData = await db.get(`SELECT * FROM login WHERE username = '${username}' AND password = '${password}'`)
-        await db.close()
-
-        if(userData.username == username && userData.password == password){
-           return res.redirect('showAppointments')
-        } else{
-            return res.redirect('login')
-        }
-    }
+var validated = false
+function authShow(req, res) {
+    res.render('login')
 }
+async function auth(req, res) {
+    const username = req.body.username
+    const password = req.body.password
+    const users = await Auth.get()
+
+    const validatingUser = users.find(user => user.username === username && user.password === password)
+
+    if(validatingUser == undefined) {
+        return res.redirect('login')
+    } else {
+        validated = true
+        return getValidate(), res.redirect('showAppointments')
+    }
+
+}
+function getValidate() {
+    return validated
+}
+//constante com a validacao. se a constante for verdadeira, carrega pagina, se nao, nao carrega. atraves de if statement
+
+module.exports = { authShow, auth, getValidate }

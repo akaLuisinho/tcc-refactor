@@ -1,7 +1,7 @@
 {
   "name": "tcc",
   "version": "1.0.0",
-  "description": "refatoração do meu tcc",
+  "description": "",
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon .",
@@ -20,8 +20,9 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "mysql": "^2.18.1",
-    "mysql3": "^0.5.14",
+    "express-flash": "0.0.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "sqlite": "^4.0.21",
     "sqlite3": "^5.0.2"
   },
