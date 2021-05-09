@@ -4,7 +4,8 @@ const initDb = {
     async init() {
         db = await Database()
 
-        await db.exec(`CREATE TABLE appointments(
+        await db.exec(`
+        CREATE TABLE appointments(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name CHAR(200) NOT NULL,
             address CHAR(200),
@@ -14,20 +15,21 @@ const initDb = {
             dentist CHAR(30) NOT NULL,
             day CHAR(20) NOT NULL,
             time CHAR(20) NOT NULL,
-            email CHAR(200) NOT NULL
-        )`)
-        await db.exec(`CREATE TABLE login(
+            email CHAR(200) NOT NULL)
+        `)
+
+        await db.exec(`
+        CREATE TABLE login(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username CHAR(40),
             password CHAR(40)
         )`)
-        await db.exec(`INSERT INTO login(
-            username,
-            password
-        ) VALUES (
-            "luisfelipe",
-            "luisfelipe@2021"
-        )`)
+
+        await db.exec(`
+        INSERT INTO login(username, password) 
+        VALUES ( "luisfelipe", "luisfelipe@2021")`
+        )
+
         await db.close()
     }
 }

@@ -9,56 +9,5 @@ module.exports = {
         db.close()
 
         return data
-    },
-    //async create(data) {
-    //    db = await Database()
-//
-    //    await db.run(`INSERT INTO appointments(
-    //        name,
-    //        address,
-    //        phone,
-    //        gender, 
-    //        birth_date,
-    //        dentist,
-    //        day,
-    //        time, 
-    //        email
-    //    ) VALUES(
-    //        "${data.name}",
-    //        "${data.address}",
-    //        "${data.phone}",
-    //        "${data.gender}",
-    //        "${data.birth_date}",
-    //        "${data.dentist}",
-    //        "${data.day}",
-    //        "${data.time}",
-    //        "${data.email}"
-    //    )` )
-//
-    //    await db.close()
-    //},
-    //async update(newData, id) {
-    //    db = await Database()
-//
-    //    await db.run(`UPDATE appointments SET
-    //        name = "${newData.name}",
-    //        address = "${newData.address}",
-    //        phone = "${newData.phone}",
-    //        gender = "${newData.gender}",
-    //        birth_date = "${newData.birth_date}",
-    //        dentist = "${newData.dentist}",
-    //        day = "${newData.day}",
-    //        time = "${newData.time}",
-    //        email = "${newData.email}"
-    //    WHERE id = ${id}` )
-//
-    //    await db.close()
-    //},
-    //async delete(id) {
-    //    db = await Database()
-//
-    //    await db.run(`DELETE FROM appointments WHERE id = ${id}`)
-    //    
-    //    await db.close()
-    //}
+    }
 }

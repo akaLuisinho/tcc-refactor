@@ -1,5 +1,6 @@
 const express = require('express')
 const routes = express.Router()
+
 const Appointment = require('./controllers/AppointmentController')
 const Static = require('./controllers/StaticController')
 const Login = require('./controllers/AuthController')
