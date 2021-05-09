@@ -10,15 +10,15 @@ module.exports = {
         const data = req.body
         await Appointment.create(data)
 
-        res.redirect('appointment')
+        res.redirect('/appointment')
     },
 
     async showAppointments(req, res) {
-        if(Auth.getValidate()){
+        if (Auth.getValidate()) {
             const data = await Appointment.get()
             return res.render('showAppointments', { data })
         } else {
-            res.redirect('login')
+            res.redirect('/login')
         }
     },
 
@@ -32,16 +32,15 @@ module.exports = {
     },
 
     async editAppointment(req, res) {
-        const appointments = await Appointment.get()
-
         const newData = req.body
 
         const id = req.params.id
 
         await Appointment.update(newData, id)
-        
+
         return res.redirect('/showAppointments')
     },
+
     async deleteAppointment(req, res) {
         const id = req.params.id
 

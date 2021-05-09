@@ -15,6 +15,7 @@ routes.post('/appointment', Appointment.makeAppointment)
 
 routes.get('/login', Login.authShow)
 routes.post('/login', Login.auth)
+routes.post('/logout', Login.logout)
 
 routes.get('/showAppointments', Appointment.showAppointments)
 

@@ -1,9 +1,17 @@
 const Auth = require('../model/Auth')
 
 var validated = false
+
+function logout(req, res) {
+    validated = false
+
+    return res.redirect('/')
+}
+
 function authShow(req, res) {
     res.render('login')
 }
+
 async function auth(req, res) {
     const username = req.body.username
     const password = req.body.password
@@ -11,7 +19,7 @@ async function auth(req, res) {
 
     const validatingUser = users.find(user => user.username === username && user.password === password)
 
-    if(validatingUser == undefined) {
+    if (validatingUser == undefined) {
         return res.redirect('login')
     } else {
         validated = true
@@ -19,9 +27,9 @@ async function auth(req, res) {
     }
 
 }
+
 function getValidate() {
     return validated
 }
-//constante com a validacao. se a constante for verdadeira, carrega pagina, se nao, nao carrega. atraves de if statement
 
-module.exports = { authShow, auth, getValidate }
+module.exports = { authShow, auth, getValidate, logout }
