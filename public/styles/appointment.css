@@ -85,3 +85,13 @@ html {
 #search{
     justify-content: right;
 }
+
+.error{
+    display: flex;
+    background-color: #22AAA1;
+    justify-content:center;
+    align-items: center;
+    padding: 50px;
+    color: #fff;
+    font-size: 25px;
+}
