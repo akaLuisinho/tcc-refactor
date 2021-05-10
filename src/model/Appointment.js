@@ -43,5 +43,15 @@ module.exports = {
         await db.run(`DELETE FROM appointments WHERE id = ${id}`)
 
         await db.close()
+    },
+
+    async getPacientByName(name) {
+        const db = await Database()
+
+        const searchedAppointment = await db.get(`SELECT * FROM appointments WHERE name LIKE '%${name}%'`)
+
+        await db.close()
+
+        return searchedAppointment
     }
 }

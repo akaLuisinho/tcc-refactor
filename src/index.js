@@ -12,5 +12,5 @@ server.set('view engine', 'ejs')
 server.use(routes)
 
 server.listen(3333, () => {
-    console.log("rodando");
+    console.log("rodando na porta 3333");
 })

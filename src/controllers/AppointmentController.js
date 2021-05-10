@@ -47,5 +47,15 @@ module.exports = {
         await Appointment.delete(id)
 
         return res.redirect('/showAppointments')
+    },
+
+    async searchAppointments(req, res) {
+        const { pacientName } = req.body
+        searchedArray = []
+
+        const searchedClient = await Appointment.getPacientByName(pacientName)
+        searchedArray.push(searchedClient)
+
+        return res.render('showAppointments', { data: searchedArray })
     }
 }

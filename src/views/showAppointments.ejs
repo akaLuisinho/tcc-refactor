@@ -7,6 +7,17 @@
 
 <body>
     <div id="container">
+        <div id="home">
+            <form action="/showAppointments" method="get">
+                <button type="submit" class="btn">Home</button>
+            </form>
+        </div>
+        <div id="search">
+
+            <form method="post" action="/showAppointments">
+                <input type="search" class="search" placeholder="Procure por um paciente..." name="pacientName">
+            </form>
+        </div>
         <div id="legend">
             <div class="data">Nome Completo</div>
             <div class="data">Endereço</div>
